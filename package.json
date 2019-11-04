@@ -1,0 +1,21 @@
+{
+  "name": "tweettoxicity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "toxicity.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrispyNipsy/TweetToxicity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrispyNipsy/TweetToxicity/issues"
+  },
+  "homepage": "https://github.com/CrispyNipsy/TweetToxicity#readme"
+}
