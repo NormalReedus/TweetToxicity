@@ -6,7 +6,7 @@ async function determineToxicity(tweetArray) {
 	const threshold = 0.9;
 
 	const toxMachine = await toxicity.load(threshold)
-	const results = await toxMachine.classify(tweetArray.slice(0,100))
+	const results = await toxMachine.classify(tweetArray.slice(0,1000))
 
 	let output = []
 	for (const tox of results[6].results) {
