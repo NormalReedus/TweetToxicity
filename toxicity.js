@@ -1,19 +1,12 @@
-const toxicity = require('@tensorflow-models/toxicity')
-let data = require('./TweetImporter.js')
 
-
-data = data.tsv
 /* Clean data here, and save into 'tweets' */
 
-// Sensitivity
-const threshold = 0.9;
-
-// Tweets to determine tox-levels of
-const tweets = data.slice(0,100)
-
 async function determineToxicity(tweetArray) {
+	// Sensitivity
+	const threshold = 0.9;
+
 	const toxMachine = await toxicity.load(threshold)
-	const results = await toxMachine.classify(tweetArray)
+	const results = await toxMachine.classify(tweetArray.slice(0,500))
 
 	const output = []
 	for (const tox of results[6].results) {
@@ -23,8 +16,6 @@ async function determineToxicity(tweetArray) {
 	/* Handle output here */
 	console.log(output)
 }
-
-determineToxicity(tweets)
 
 
 
