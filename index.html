@@ -8,13 +8,20 @@
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity" defer></script>
 	<script src="toxicity.js" defer></script>
-	<script src="loadFile.js" defer></script>
+	<script src="handleFiles.js" defer></script>
+	<link rel="stylesheet" href="styles.css">
 	<title>Tox</title>
 </head>
 
 <body>
-	<input type="file" id="file-input" />
-	<p id="output"></p>
+	<div class="wrap">
+		<label for="file-input"><img src="folder.png" alt="select-file"><span id="label">Select Data</span></label>
+		<input type="file" id="file-input" />
+		<button id="analyze">ANALYZE!</button>
+		<div id="progress"></div>
+
+		<p id="output"></p>
+	</div>
 </body>
 
 </html>
