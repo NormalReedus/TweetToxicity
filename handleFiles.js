@@ -9,10 +9,13 @@ function readSingleFile(e) {
 	reader.onload = function (e) {
 		let contents = e.target.result;
 		contents = contents.split('-\n-')
+		if (contents.length === 1) {
+			contents = contents.split('-\r\n-')
+		}
 		//contents.pop()
 
 		determineToxicity(contents)
-	};
+	}
 	reader.readAsText(file)
 
 }
