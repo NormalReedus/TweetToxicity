@@ -1,9 +1,11 @@
 
 /* Clean data here, and save into 'tweets' */
-const stepSize = 10
+
 
 async function determineToxicity(tweetArray) {
 	// PROGRESS BAR
+	const stepSize = Number(document.getElementById('step-size').value)
+
 	const numBlocks = Math.floor(tweetArray.length / stepSize) + 1
 	let progress = 0
 	document.getElementById('progress').innerText = ''

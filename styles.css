@@ -35,11 +35,27 @@ label img {
 	filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
 }
 
+label[for='step-size'] {
+	font-family: inherit;
+}
+
 #progress {
 	height: 20px;
 	font-family: Consolas;
 	font-size: 20px;
 	color: rgb(111, 202, 111);
+}
+
+#step-size {
+	border-radius: 5px;
+	background: lightskyblue;
+	border: 0;
+	padding: 5px;
+	width: 4em;
+	display: flex;
+	text-align: center;
+	font-family: inherit;
+	font-size: inherit;
 }
 
 #file-input {
