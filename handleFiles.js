@@ -1,7 +1,7 @@
 let data
 
 function readSingleFile(e) {
-	let file = e.target.files[0];
+	let file = document.getElementById('file-input').files[0];
 	if (!file) {
 		return;
 	}
@@ -9,7 +9,7 @@ function readSingleFile(e) {
 	reader.onload = function (e) {
 		let contents = e.target.result;
 		contents = contents.split('-\n-')
-		contents.pop()
+		//contents.pop()
 
 		determineToxicity(contents)
 	};
@@ -17,8 +17,8 @@ function readSingleFile(e) {
 
 }
 
-document.getElementById('file-input')
-	.addEventListener('change', readSingleFile, false);
+document.getElementById('analyze')
+	.addEventListener('click', readSingleFile, false);
 
 let textFile
 function makeTextFile(csv) {
@@ -40,3 +40,9 @@ function makeTextFile(csv) {
 	document.querySelector('#output').appendChild(a);
 
 }
+
+// PAGE
+
+document.getElementById('file-input').addEventListener('change', e => {
+	document.getElementById('label').innerText = e.target.files[0].name
+})

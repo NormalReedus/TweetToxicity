@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: lightslategrey;
+	font-family: 'Arial Narrow Bold', sans-serif;
+	font-weight: 600;
+}
+
+.wrap {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.wrap > * {
+	margin: 10px 0;
+}
+
+label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+label img {
+	margin-right: 10px;
+	filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+}
+
+#progress {
+	height: 20px;
+	font-family: Consolas;
+	font-size: 20px;
+	color: rgb(111, 202, 111);
+}
+
+#file-input {
+	display: none;
+}
+
+button {
+	font-family: inherit;
+	font-weight: inherit;
+
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	background: lightskyblue;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+	cursor: pointer;
+}
+button:hover {
+	background: rgb(111, 202, 111);
+}
+
+output {
+	font-family: inherit;
+}
