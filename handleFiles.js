@@ -8,9 +8,11 @@ function readSingleFile(e) {
 	let reader = new FileReader();
 	reader.onload = function (e) {
 		let contents = e.target.result;
-		contents = contents.split('-\n-')
-		if (contents.length === 1) {
+		splitOne = contents.split('-\n-')
+		if (splitOne.length === 1) {
 			contents = contents.split('-\r\n-')
+		} else {
+			contents = splitOne
 		}
 		//contents.pop()
 
