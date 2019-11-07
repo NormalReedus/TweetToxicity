@@ -1,9 +1,10 @@
 
 /* Clean data here, and save into 'tweets' */
+const stepSize = 10
 
 async function determineToxicity(tweetArray) {
 	// PROGRESS BAR
-	const numBlocks = Math.floor(tweetArray.length / 100) + 1
+	const numBlocks = Math.floor(tweetArray.length / stepSize) + 1
 	let progress = 0
 	document.getElementById('progress').innerText = ''
 	for (let i = 0; i < numBlocks; i++) {
@@ -17,7 +18,7 @@ async function determineToxicity(tweetArray) {
 	const toxMachine = await toxicity.load(threshold)
 
 	let start = 0
-	let end = 100
+	let end = stepSize
 
 	while (start <= tweetArray.length) {
 		console.log(start, end)
@@ -29,7 +30,7 @@ async function determineToxicity(tweetArray) {
 		}
 
 		start = end
-		end += 100
+		end += stepSize
 		
 		document.getElementById('progress').childNodes[progress].textContent = '>'
 		progress++
