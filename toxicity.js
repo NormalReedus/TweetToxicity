@@ -1,6 +1,4 @@
-
 /* Clean data here, and save into 'tweets' */
-
 
 async function determineToxicity(tweetArray) {
 	// PROGRESS BAR
@@ -33,11 +31,10 @@ async function determineToxicity(tweetArray) {
 
 		start = end
 		end += stepSize
-		
+
 		document.getElementById('progress').childNodes[progress].textContent = '>'
 		progress++
 	}
-
 	/* Handle output here */
 	console.log(output)
 
@@ -45,8 +42,3 @@ async function determineToxicity(tweetArray) {
 
 	makeTextFile(output)
 }
-
-
-
-
-
